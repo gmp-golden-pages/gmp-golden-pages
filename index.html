@@ -11,25 +11,21 @@
 
   <style>
     :root{
-      --gold: #b8892f;
-      --gold-deep: #9a6d1f;
-      --gold-soft: #d8b56a;
-      --brown-dark: #3e2412;
-      --brown-mid: #5b3a1d;
-      --brown-soft: #6b4a2a;
-      --paper: rgba(248, 240, 225, 0.92);
-      --paper-2: rgba(239, 227, 199, 0.90);
+      --gold:#b8892f;
+      --gold-deep:#9a6d1f;
+      --gold-soft:#d8b56a;
+      --brown-dark:#3e2412;
+      --brown-mid:#5b3a1d;
+      --brown-soft:#6b4a2a;
+      --paper:rgba(248,240,225,0.92);
+      --paper-2:rgba(239,227,199,0.90);
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{margin:0;padding:0;box-sizing:border-box;}
 
     body{
-      font-family: "Cormorant Garamond", serif;
-      color: var(--brown-dark);
+      font-family:"Cormorant Garamond", serif;
+      color:var(--brown-dark);
       min-height:100vh;
       background:
         linear-gradient(rgba(27,14,6,0.16), rgba(27,14,6,0.22)),
@@ -49,15 +45,14 @@
 
     .shelf{
       position:absolute;
-      top:0;
-      bottom:0;
+      top:0; bottom:0;
       width:22%;
       min-width:120px;
       background-size:cover;
       background-repeat:no-repeat;
       z-index:1;
-      filter:saturate(1.06) contrast(1.04) brightness(0.90);
-      box-shadow: inset 0 0 60px rgba(0,0,0,0.28);
+      filter:saturate(1.05) contrast(1.02) brightness(0.92);
+      box-shadow:inset 0 0 60px rgba(0,0,0,0.28);
     }
 
     .shelf.left{
@@ -66,7 +61,6 @@
         linear-gradient(rgba(28,15,6,0.12), rgba(28,15,6,0.22)),
         url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop");
       background-position:left center;
-      border-right:1px solid rgba(122,82,18,0.35);
     }
 
     .shelf.right{
@@ -75,7 +69,6 @@
         linear-gradient(rgba(28,15,6,0.12), rgba(28,15,6,0.22)),
         url("https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1200&auto=format&fit=crop");
       background-position:right center;
-      border-left:1px solid rgba(122,82,18,0.35);
     }
 
     .center-wrap{
@@ -90,7 +83,7 @@
       box-shadow:
         0 22px 50px rgba(0,0,0,0.22),
         inset 0 0 0 1px rgba(255,255,255,0.30);
-      backdrop-filter: blur(1.4px);
+      backdrop-filter:blur(1.4px);
     }
 
     .center-wrap::before{
@@ -106,40 +99,21 @@
       position:absolute;
       width:42px;
       height:42px;
-      border-color: rgba(72,45,20,0.95);
+      border-color:rgba(72,45,20,0.95);
       z-index:3;
       pointer-events:none;
     }
 
-    .corner.tl{
-      top:24px; left:24px;
-      border-top:2px solid; border-left:2px solid;
-      border-top-left-radius:10px;
-    }
-
-    .corner.tr{
-      top:24px; right:24px;
-      border-top:2px solid; border-right:2px solid;
-      border-top-right-radius:10px;
-    }
-
-    .corner.bl{
-      bottom:24px; left:24px;
-      border-bottom:2px solid; border-left:2px solid;
-      border-bottom-left-radius:10px;
-    }
-
-    .corner.br{
-      bottom:24px; right:24px;
-      border-bottom:2px solid; border-right:2px solid;
-      border-bottom-right-radius:10px;
-    }
+    .corner.tl{top:24px; left:24px; border-top:2px solid; border-left:2px solid; border-top-left-radius:10px;}
+    .corner.tr{top:24px; right:24px; border-top:2px solid; border-right:2px solid; border-top-right-radius:10px;}
+    .corner.bl{bottom:24px; left:24px; border-bottom:2px solid; border-left:2px solid; border-bottom-left-radius:10px;}
+    .corner.br{bottom:24px; right:24px; border-bottom:2px solid; border-right:2px solid; border-bottom-right-radius:10px;}
 
     .gmp{
-      font-family: "Great Vibes", cursive;
-      font-size: clamp(88px, 8.8vw, 145px);
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(88px, 8.8vw, 145px);
       line-height:0.9;
-      color: var(--gold);
+      color:var(--gold);
       text-shadow:
         0 1px 0 #fff6db,
         0 2px 0 #ecd59c,
@@ -150,13 +124,11 @@
     }
 
     .title{
-      font-family: "Great Vibes", cursive;
-      font-size: clamp(54px, 5.2vw, 82px);
+      font-family:"Great Vibes", cursive;
+      font-size:clamp(54px, 5.2vw, 82px);
       line-height:1;
-      color: var(--brown-dark);
-      margin-top:0;
+      color:var(--brown-dark);
       margin-bottom:8px;
-      text-shadow: 0 1px 1px rgba(255,255,255,0.25);
     }
 
     .divider{
@@ -190,8 +162,8 @@
     }
 
     .subtitle{
-      font-size: clamp(26px, 2.5vw, 40px);
-      color: var(--brown-soft);
+      font-size:clamp(26px, 2.5vw, 40px);
+      color:var(--brown-soft);
       line-height:1.08;
       margin-bottom:28px;
       padding:0 8px;
@@ -199,7 +171,7 @@
 
     .book-link{
       display:block;
-      width:min(500px, 92%);
+      width:min(540px, 94%);
       margin:0 auto;
       text-decoration:none;
       color:inherit;
@@ -219,7 +191,7 @@
         0 14px 30px rgba(79,49,12,0.12),
         inset 0 0 0 1px rgba(255,255,255,0.32);
       position:relative;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      transition:transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
     }
 
     .book-card::before{
@@ -237,158 +209,77 @@
       box-shadow:
         0 18px 34px rgba(79,49,12,0.18),
         inset 0 0 0 1px rgba(255,255,255,0.32);
-      border-color: rgba(190,144,55,0.95);
+      border-color:rgba(190,144,55,0.95);
     }
 
-    .book-icon{
-      flex:0 0 90px;
-      width:90px;
-      height:90px;
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:42px;
-      background:linear-gradient(180deg, #f8eed4, #ead29b);
-      color: var(--gold-deep);
+    .book-cover{
+      flex:0 0 110px;
+      width:110px;
+      height:150px;
+      border-radius:12px;
+      background:url("images/gabriil-cover.jpg") center/cover no-repeat;
       border:1px solid rgba(171,123,34,0.35);
-      box-shadow:
-        inset 0 4px 10px rgba(255,255,255,0.45),
-        0 6px 12px rgba(111,76,18,0.10);
+      box-shadow:0 8px 18px rgba(0,0,0,0.18);
     }
 
     .book-info h3{
-      font-size: clamp(40px, 4vw, 58px);
-      color: var(--brown-mid);
+      font-size:clamp(36px, 3.7vw, 52px);
+      color:var(--brown-mid);
       margin-bottom:4px;
       font-weight:700;
+      line-height:1.02;
+    }
+
+    .book-author{
+      font-size:clamp(22px, 2vw, 30px);
+      color:var(--gold-deep);
+      margin-bottom:8px;
+      font-weight:600;
     }
 
     .book-info p{
-      font-size: clamp(24px, 2vw, 31px);
-      color: var(--brown-soft);
+      font-size:clamp(22px, 1.9vw, 28px);
+      color:var(--brown-soft);
       line-height:1.10;
     }
 
-    @media (max-width: 1100px){
-      .shelf{
-        width:19%;
-        min-width:90px;
-      }
-
-      .center-wrap{
-        width:min(760px, 66vw);
-      }
+    @media (max-width:1100px){
+      .shelf{width:19%; min-width:90px;}
+      .center-wrap{width:min(760px, 66vw);}
     }
 
-    @media (max-width: 900px){
-      .page{
-        padding:14px 6px 18px;
-      }
-
-      .shelf{
-        width:16%;
-        min-width:62px;
-      }
-
-      .center-wrap{
-        width:76vw;
-        padding:28px 14px 30px;
-      }
-
-      .book-link{
-        width:min(420px, 94%);
-      }
-
-      .book-icon{
-        width:74px;
-        height:74px;
-        flex-basis:74px;
-        font-size:34px;
-      }
-
-      .book-info h3{
-        font-size:34px;
-      }
-
-      .book-info p{
-        font-size:22px;
-      }
+    @media (max-width:900px){
+      .page{padding:14px 6px 18px;}
+      .shelf{width:16%; min-width:62px;}
+      .center-wrap{width:76vw; padding:28px 14px 30px;}
+      .book-link{width:min(460px, 96%);}
+      .book-cover{width:92px; height:126px; flex-basis:92px;}
+      .book-info h3{font-size:32px;}
+      .book-author{font-size:22px;}
+      .book-info p{font-size:20px;}
     }
 
-    @media (max-width: 640px){
-      .shelf{
-        display:block;
-        width:12%;
-        min-width:44px;
-        filter:saturate(1.05) contrast(1.02) brightness(0.90);
-      }
-
-      .center-wrap{
-        width:84vw;
-        padding:22px 10px 24px;
-        border-radius:22px;
-      }
-
-      .center-wrap::before{
-        inset:10px;
-        border-radius:16px;
-      }
-
-      .corner{
-        width:28px;
-        height:28px;
-      }
-
+    @media (max-width:640px){
+      .shelf{display:block; width:12%; min-width:44px;}
+      .center-wrap{width:84vw; padding:22px 10px 24px; border-radius:22px;}
+      .center-wrap::before{inset:10px; border-radius:16px;}
+      .corner{width:28px; height:28px;}
       .corner.tl{ top:16px; left:16px; }
       .corner.tr{ top:16px; right:16px; }
       .corner.bl{ bottom:16px; left:16px; }
       .corner.br{ bottom:16px; right:16px; }
-
-      .gmp{
-        font-size:74px;
-      }
-
-      .title{
-        font-size:42px;
-        margin-bottom:8px;
-      }
-
-      .subtitle{
-        font-size:18px;
-        margin-bottom:20px;
-      }
-
-      .book-link{
-        width:92%;
-      }
-
-      .book-card{
-        padding:16px 10px;
-        gap:10px;
-        flex-direction:column;
-        text-align:center;
-      }
-
-      .book-icon{
-        width:62px;
-        height:62px;
-        flex-basis:62px;
-        font-size:28px;
-      }
-
-      .book-info h3{
-        font-size:30px;
-      }
-
-      .book-info p{
-        font-size:18px;
-      }
+      .gmp{font-size:74px;}
+      .title{font-size:42px; margin-bottom:8px;}
+      .subtitle{font-size:18px; margin-bottom:20px;}
+      .book-card{padding:16px 10px; gap:10px; flex-direction:column; text-align:center;}
+      .book-cover{width:120px; height:168px; flex-basis:120px;}
+      .book-info h3{font-size:28px;}
+      .book-author{font-size:18px;}
+      .book-info p{font-size:17px;}
     }
   </style>
 </head>
 <body>
-
   <main class="page">
     <div class="shelf left"></div>
     <div class="shelf right"></div>
@@ -408,15 +299,15 @@
 
       <a class="book-link" href="vivlia.html">
         <div class="book-card">
-          <div class="book-icon">📖</div>
+          <div class="book-cover"></div>
           <div class="book-info">
-            <h3>Βιβλία</h3>
-            <p>Ανακάλυψε χιλιάδες βιβλία<br>σε κάθε είδος και εποχή.</p>
+            <h3>ΓΑΒΡΙΗΛ</h3>
+            <div class="book-author">Ο Μικρός Που Νικούσε το Σκοτάδι</div>
+            <p>Πάτησε εδώ για να δεις το βιβλίο και το εξώφυλλό του.</p>
           </div>
         </div>
       </a>
     </section>
   </main>
-
 </body>
 </html>
