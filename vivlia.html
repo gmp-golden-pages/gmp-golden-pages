@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ΓΑΒΡΙΗΛ - GMP Golden Pages</title>
+  <title>Βιβλία - GMP Golden Pages</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,10 @@
       --brown-dark:#3e2412;
       --brown-mid:#5b3a1d;
       --brown-soft:#6b4a2a;
-      --paper:rgba(248,240,225,0.94);
-      --paper-2:rgba(239,227,199,0.92);
-      --card:rgba(255,250,241,0.95);
+      --paper:rgba(248,240,225,0.92);
+      --paper-2:rgba(239,227,199,0.90);
+      --card:rgba(255,250,241,0.92);
+      --card-border:rgba(190,144,55,0.65);
     }
 
     *{
@@ -33,143 +34,128 @@
       color:var(--brown-dark);
       min-height:100vh;
       background:
-        linear-gradient(rgba(255,246,230,0.28), rgba(255,243,220,0.34)),
+        linear-gradient(rgba(255,245,225,0.10), rgba(255,240,215,0.16)),
         url("https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1800&auto=format&fit=crop")
         center center / cover no-repeat fixed;
     }
 
-    .page{
-      max-width:1100px;
-      margin:0 auto;
-      padding:24px 14px 40px;
-    }
-
     .topbar{
-      margin-bottom:16px;
+      position:sticky;
+      top:0;
+      z-index:20;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:16px 20px;
+      background:linear-gradient(180deg, rgba(35,18,8,0.95), rgba(55,30,12,0.92));
+      border-bottom:1px solid rgba(216,181,106,0.35);
+      box-shadow:0 8px 20px rgba(0,0,0,0.20);
     }
 
     .back-btn{
       display:inline-block;
       text-decoration:none;
-      color:#fff8eb;
+      color:#fff3dc;
       background:linear-gradient(180deg, #8b5f1c, #5f3b12);
-      border:1px solid rgba(255,255,255,0.18);
+      border:1px solid rgba(255,255,255,0.16);
       padding:10px 18px;
-      border-radius:12px;
+      border-radius:14px;
       font-size:24px;
       font-weight:600;
-      box-shadow:0 8px 18px rgba(0,0,0,0.14);
+      box-shadow:0 8px 18px rgba(0,0,0,0.16);
     }
 
-    .hero{
-      text-align:center;
-      background:linear-gradient(var(--paper), var(--paper-2));
-      border:2px solid rgba(177,130,41,0.58);
-      border-radius:28px;
-      box-shadow:
-        0 22px 50px rgba(0,0,0,0.16),
-        inset 0 0 0 1px rgba(255,255,255,0.28);
-      padding:24px 18px;
-      margin-bottom:20px;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      color:#f0d187;
     }
 
-    .mini-logo{
-      font-family:"Great Vibes", cursive;
-      font-size:60px;
-      line-height:0.9;
-      color:var(--gold);
-      text-shadow:
-        0 1px 0 #fff6db,
-        0 2px 0 #ecd59c,
-        0 4px 0 #c89b43,
-        0 8px 16px rgba(90,57,13,0.18);
-      margin-bottom:-4px;
-    }
-
-    .mini-sub{
-      font-family:"Great Vibes", cursive;
-      font-size:32px;
-      color:var(--brown-dark);
-      margin-bottom:6px;
-    }
-
-    h1{
-      font-size:78px;
-      color:var(--brown-mid);
+    .brand-icon{
+      font-size:42px;
       line-height:1;
-      margin-bottom:10px;
     }
 
-    .line{
-      width:240px;
-      max-width:80%;
-      margin:0 auto 12px;
-      height:18px;
-      position:relative;
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1;
     }
 
-    .line::before,
-    .line::after{
-      content:"";
-      position:absolute;
-      top:50%;
-      width:42%;
-      height:1.6px;
-      background:linear-gradient(to right, transparent, var(--gold-soft), transparent);
+    .brand-title{
+      font-size:28px;
+      font-weight:700;
+      letter-spacing:0.5px;
     }
 
-    .line::before{ left:0; }
-    .line::after{ right:0; }
-
-    .line span{
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-52%);
-      color:var(--gold);
+    .brand-sub{
       font-size:18px;
+      margin-top:4px;
+      color:#f6dfad;
     }
 
-    .subtitle{
-      font-size:30px;
-      color:var(--brown-soft);
-      line-height:1.12;
+    .page{
+      max-width:1400px;
+      margin:0 auto;
+      padding:32px 18px 40px;
+    }
+
+    .books-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:26px;
+      align-items:start;
+      justify-items:center;
     }
 
     .book-card{
-      display:grid;
-      grid-template-columns:280px 1fr;
-      gap:24px;
-      align-items:center;
-      background:var(--card);
-      border:2px solid rgba(190,144,55,0.55);
-      border-radius:22px;
-      padding:20px;
+      width:100%;
+      max-width:620px;
+      background:linear-gradient(var(--paper), var(--paper-2));
+      border:2px solid var(--card-border);
+      border-radius:26px;
       box-shadow:
-        0 14px 26px rgba(79,49,12,0.10),
-        inset 0 0 0 1px rgba(255,255,255,0.30);
+        0 22px 40px rgba(0,0,0,0.12),
+        inset 0 0 0 1px rgba(255,255,255,0.28);
+      padding:22px;
+    }
+
+    .book-inner{
+      background:var(--card);
+      border:1px solid rgba(194,151,65,0.22);
+      border-radius:20px;
+      padding:20px;
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:22px;
+      align-items:start;
     }
 
     .cover{
       width:100%;
       aspect-ratio:3 / 4.5;
-      border-radius:16px;
-      background:url("gabriel-cover.jpg") center/cover no-repeat;
-      box-shadow:0 10px 18px rgba(0,0,0,0.16);
+      border-radius:14px;
+      background-position:center;
+      background-size:cover;
+      background-repeat:no-repeat;
       border:1px solid rgba(120,81,19,0.24);
+      box-shadow:0 10px 22px rgba(0,0,0,0.18);
     }
 
     .book-content h2{
       font-size:56px;
       color:var(--brown-mid);
-      line-height:1.02;
-      margin-bottom:6px;
+      line-height:0.95;
+      margin-bottom:8px;
     }
 
-    .author{
-      font-size:30px;
+    .subtitle{
+      font-size:24px;
       color:var(--gold-deep);
-      margin-bottom:10px;
+      line-height:1.1;
+      margin-bottom:12px;
       font-weight:600;
     }
 
@@ -177,7 +163,7 @@
       width:140px;
       height:16px;
       position:relative;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
 
     .small-line::before,
@@ -202,185 +188,251 @@
       font-size:16px;
     }
 
-    .desc{
-      font-size:30px;
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 16px;
+      font-size:18px;
       color:var(--brown-soft);
-      line-height:1.16;
       margin-bottom:16px;
-      max-width:700px;
     }
 
-    .info-box{
-      background:linear-gradient(180deg, rgba(255,248,232,0.95), rgba(247,234,204,0.92));
-      border:1px solid rgba(190,144,55,0.45);
-      border-radius:16px;
-      padding:16px 18px;
-      font-size:24px;
-      color:var(--brown-mid);
-      line-height:1.2;
+    .meta span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
     }
 
-    .section{
-      margin-top:22px;
-      background:linear-gradient(var(--paper), var(--paper-2));
-      border:2px solid rgba(177,130,41,0.45);
-      border-radius:22px;
-      padding:22px 18px;
-      box-shadow:0 12px 24px rgba(0,0,0,0.08);
-    }
-
-    .section h3{
-      font-size:40px;
-      color:var(--brown-mid);
-      margin-bottom:10px;
-    }
-
-    .section p{
-      font-size:28px;
+    .desc{
+      font-size:22px;
       color:var(--brown-soft);
-      line-height:1.22;
+      line-height:1.2;
+      margin-bottom:18px;
     }
 
-    @media (max-width:900px){
-      h1{
-        font-size:58px;
+    .buttons{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .btn{
+      display:inline-block;
+      text-decoration:none;
+      padding:12px 20px;
+      border-radius:14px;
+      font-size:24px;
+      font-weight:700;
+      border:1px solid rgba(160,116,35,0.40);
+      box-shadow:0 8px 16px rgba(111,76,18,0.10);
+    }
+
+    .btn-open{
+      background:linear-gradient(180deg, #4a2b13, #2d1709);
+      color:#f9e3b0;
+    }
+
+    .btn-download{
+      background:linear-gradient(180deg, #fff8ea, #eedcb6);
+      color:#5a3a1d;
+    }
+
+    .placeholder .cover{
+      background:
+        linear-gradient(rgba(22,28,28,0.10), rgba(22,28,28,0.18)),
+        linear-gradient(180deg, #2d3b36, #16211d);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#e1bf72;
+      text-align:center;
+      padding:16px;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    .single-mode{
+      grid-template-columns:minmax(0, 1fr);
+      justify-items:center;
+    }
+
+    .single-mode .book-card{
+      max-width:700px;
+      transform:scale(0.92);
+      transform-origin:top center;
+    }
+
+    @media (max-width: 1100px){
+      .books-grid{
+        grid-template-columns:1fr;
       }
 
-      .subtitle{
-        font-size:24px;
-      }
-
-      .book-card{
-        grid-template-columns:220px 1fr;
-      }
-
-      .book-content h2{
-        font-size:42px;
-      }
-
-      .author{
-        font-size:24px;
-      }
-
-      .desc{
-        font-size:24px;
-      }
-
-      .section h3{
-        font-size:34px;
-      }
-
-      .section p,
-      .info-box{
-        font-size:22px;
+      .single-mode .book-card{
+        transform:none;
+        max-width:720px;
       }
     }
 
-    @media (max-width:640px){
-      .page{
-        padding:16px 10px 30px;
+    @media (max-width: 700px){
+      .topbar{
+        padding:14px 12px;
       }
 
       .back-btn{
+        font-size:20px;
+        padding:9px 14px;
+      }
+
+      .brand-title{
         font-size:22px;
       }
 
-      .hero{
-        padding:20px 12px;
-        margin-bottom:16px;
+      .brand-sub{
+        font-size:15px;
       }
 
-      .mini-logo{
-        font-size:46px;
-      }
-
-      .mini-sub{
-        font-size:26px;
-      }
-
-      h1{
-        font-size:42px;
-      }
-
-      .subtitle{
-        font-size:20px;
+      .page{
+        padding:18px 10px 26px;
       }
 
       .book-card{
+        padding:14px;
+        border-radius:22px;
+      }
+
+      .book-inner{
         grid-template-columns:1fr;
+        gap:16px;
         text-align:center;
-        gap:14px;
       }
 
       .cover{
-        max-width:240px;
+        max-width:230px;
         margin:0 auto;
       }
 
       .book-content h2{
-        font-size:30px;
+        font-size:38px;
       }
 
-      .author{
+      .subtitle{
         font-size:20px;
       }
 
       .small-line{
-        margin:0 auto 10px;
+        margin:0 auto 14px;
+      }
+
+      .meta{
+        justify-content:center;
+        font-size:17px;
       }
 
       .desc{
         font-size:20px;
       }
 
-      .section h3{
-        font-size:28px;
+      .buttons{
+        justify-content:center;
       }
 
-      .section p,
-      .info-box{
+      .btn{
         font-size:20px;
+        padding:10px 16px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <div class="topbar">
-      <a class="back-btn" href="index.html">← Αρχική</a>
+
+  <header class="topbar">
+    <a class="back-btn" href="index.html">← Αρχική</a>
+
+    <div class="brand">
+      <div class="brand-icon">📖</div>
+      <div class="brand-text">
+        <div class="brand-title">GMP</div>
+        <div class="brand-sub">Golden Pages</div>
+      </div>
     </div>
 
-    <section class="hero">
-      <div class="mini-logo">GMP</div>
-      <div class="mini-sub">Golden Pages</div>
-      <h1>ΓΑΒΡΙΗΛ</h1>
-      <div class="line"><span>✦</span></div>
-      <p class="subtitle">Ο Μικρός Που Νικούσε το Σκοτάδι</p>
-    </section>
+    <div style="width:72px"></div>
+  </header>
 
-    <article class="book-card">
-      <div class="cover"></div>
+  <!--
+    Αν έχεις 1 μόνο βιβλίο, κράτα class="books-grid single-mode"
+    Αν βάλεις 2ο βιβλίο, βγάλε το single-mode και θα μπουν δίπλα δίπλα
+  -->
+  <main class="page">
+    <section class="books-grid single-mode">
 
-      <div class="book-content">
-        <h2>ΓΑΒΡΙΗΛ</h2>
-        <div class="author">Ο Μικρός Που Νικούσε το Σκοτάδι</div>
-        <div class="small-line"><span>✦</span></div>
-        <p class="desc">Μια αληθινή ιστορία δύναμης, αγάπης και ελπίδας.</p>
+      <!-- ΒΙΒΛΙΟ 1 -->
+      <article class="book-card">
+        <div class="book-inner">
+          <div class="cover" style='background-image:url("gabriel-cover.jpg");'></div>
 
-        <div class="info-box">
-          Τελική, διορθωμένη έκδοση<br>
-          Για τον Γαβριήλ
+          <div class="book-content">
+            <h2>ΓΑΒΡΙΗΛ</h2>
+            <div class="subtitle">Ο Μικρός Που Νικούσε το Σκοτάδι</div>
+
+            <div class="small-line"><span>✦</span></div>
+
+            <div class="meta">
+              <span>📖 Μυθιστόρημα</span>
+              <span>📄 PDF</span>
+              <span>📑 120 σελίδες</span>
+            </div>
+
+            <p class="desc">
+              Μια αληθινή ιστορία δύναμης, αγάπης και ελπίδας.
+            </p>
+
+            <div class="buttons">
+              <a class="btn btn-open" href="#">📖 Άνοιγμα</a>
+              <a class="btn btn-download" href="#">⇩ Λήψη</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <section class="section">
-      <h3>Περιγραφή</h3>
-      <p>
-        Ένα βιβλίο για την αλήθεια, την αντοχή, την οικογένεια και το φως που μένει
-        ακόμη και στις πιο δύσκολες εποχές.
-      </p>
+      <!--
+      ΒΙΒΛΙΟ 2
+      Όταν θελήσεις να βάλεις δεύτερο βιβλίο:
+      1. ξεσχολίασε αυτό το κομμάτι
+      2. βγάλε το single-mode από το books-grid
+      -->
+      <!--
+      <article class="book-card placeholder">
+        <div class="book-inner">
+          <div class="cover">ΔΕΥΤΕΡΟ<br>ΒΙΒΛΙΟ</div>
+
+          <div class="book-content">
+            <h2>Δεύτερο Βιβλίο</h2>
+            <div class="subtitle">Υπότιτλος ή περιγραφή</div>
+
+            <div class="small-line"><span>✦</span></div>
+
+            <div class="meta">
+              <span>📖 Είδος</span>
+              <span>📄 EPUB</span>
+              <span>📝 Σε προετοιμασία</span>
+            </div>
+
+            <p class="desc">
+              Εδώ θα μπει το δεύτερο βιβλίο σου όταν το προσθέσουμε.
+            </p>
+
+            <div class="buttons">
+              <a class="btn btn-open" href="#">📖 Άνοιγμα</a>
+              <a class="btn btn-download" href="#">⇩ Λήψη</a>
+            </div>
+          </div>
+        </div>
+      </article>
+      -->
+
     </section>
-  </div>
+  </main>
+
 </body>
 </html>
