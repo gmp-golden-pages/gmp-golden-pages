@@ -104,15 +104,13 @@
 
     .books-grid{
       display:grid;
-      grid-template-columns:repeat(2, minmax(0, 1fr));
-      gap:26px;
-      align-items:start;
+      grid-template-columns:minmax(0, 1fr);
       justify-items:center;
     }
 
     .book-card{
       width:100%;
-      max-width:620px;
+      max-width:700px;
       background:linear-gradient(var(--paper), var(--paper-2));
       border:2px solid var(--card-border);
       border-radius:26px;
@@ -137,11 +135,13 @@
       width:100%;
       aspect-ratio:3 / 4.5;
       border-radius:14px;
+      background-image:url("gabriel-cover.jpg");
       background-position:center;
       background-size:cover;
       background-repeat:no-repeat;
       border:1px solid rgba(120,81,19,0.24);
       box-shadow:0 10px 22px rgba(0,0,0,0.18);
+      background-color:#eadfc9;
     }
 
     .book-content h2{
@@ -237,42 +237,6 @@
       color:#5a3a1d;
     }
 
-    .placeholder .cover{
-      background:
-        linear-gradient(rgba(22,28,28,0.10), rgba(22,28,28,0.18)),
-        linear-gradient(180deg, #2d3b36, #16211d);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#e1bf72;
-      text-align:center;
-      padding:16px;
-      font-size:28px;
-      font-weight:700;
-    }
-
-    .single-mode{
-      grid-template-columns:minmax(0, 1fr);
-      justify-items:center;
-    }
-
-    .single-mode .book-card{
-      max-width:700px;
-      transform:scale(0.92);
-      transform-origin:top center;
-    }
-
-    @media (max-width: 1100px){
-      .books-grid{
-        grid-template-columns:1fr;
-      }
-
-      .single-mode .book-card{
-        transform:none;
-        max-width:720px;
-      }
-    }
-
     @media (max-width: 700px){
       .topbar{
         padding:14px 12px;
@@ -359,17 +323,12 @@
     <div style="width:72px"></div>
   </header>
 
-  <!--
-    Αν έχεις 1 μόνο βιβλίο, κράτα class="books-grid single-mode"
-    Αν βάλεις 2ο βιβλίο, βγάλε το single-mode και θα μπουν δίπλα δίπλα
-  -->
   <main class="page">
-    <section class="books-grid single-mode">
+    <section class="books-grid">
 
-      <!-- ΒΙΒΛΙΟ 1 -->
       <article class="book-card">
         <div class="book-inner">
-          <div class="cover" style='background-image:url("gabriel-cover.jpg");'></div>
+          <div class="cover"></div>
 
           <div class="book-content">
             <h2>ΓΑΒΡΙΗΛ</h2>
@@ -394,42 +353,6 @@
           </div>
         </div>
       </article>
-
-      <!--
-      ΒΙΒΛΙΟ 2
-      Όταν θελήσεις να βάλεις δεύτερο βιβλίο:
-      1. ξεσχολίασε αυτό το κομμάτι
-      2. βγάλε το single-mode από το books-grid
-      -->
-      <!--
-      <article class="book-card placeholder">
-        <div class="book-inner">
-          <div class="cover">ΔΕΥΤΕΡΟ<br>ΒΙΒΛΙΟ</div>
-
-          <div class="book-content">
-            <h2>Δεύτερο Βιβλίο</h2>
-            <div class="subtitle">Υπότιτλος ή περιγραφή</div>
-
-            <div class="small-line"><span>✦</span></div>
-
-            <div class="meta">
-              <span>📖 Είδος</span>
-              <span>📄 EPUB</span>
-              <span>📝 Σε προετοιμασία</span>
-            </div>
-
-            <p class="desc">
-              Εδώ θα μπει το δεύτερο βιβλίο σου όταν το προσθέσουμε.
-            </p>
-
-            <div class="buttons">
-              <a class="btn btn-open" href="#">📖 Άνοιγμα</a>
-              <a class="btn btn-download" href="#">⇩ Λήψη</a>
-            </div>
-          </div>
-        </div>
-      </article>
-      -->
 
     </section>
   </main>
